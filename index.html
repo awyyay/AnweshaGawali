@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anwesha Gawali: Always in motion</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Caveat:wght@500;700&display=swap">
+<style>
+:root{--bg:#fbf3e4;--fg:#1f1a15;--mut:#7a6b5d;--card:#fffaf0;--line:#e6d7bd;--acc:#e8541e;--cof:#6b4a35;--hl:#ffe08a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17120e;--fg:#f4eadb;--mut:#b2a290;--card:#211a14;--line:#3a2f25;--acc:#ff7a45;--cof:#d2a77f;--hl:#5a4a14}}
+:root[data-theme="dark"]{--bg:#17120e;--fg:#f4eadb;--mut:#b2a290;--card:#211a14;--line:#3a2f25;--acc:#ff7a45;--cof:#d2a77f;--hl:#5a4a14}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 "Bricolage Grotesque",system-ui,sans-serif}
+.mo{position:fixed;top:0;left:0;height:4px;width:0;background:var(--acc);z-index:30;padding-top:env(safe-area-inset-top,0px)}
+.w{max-width:860px;margin:0 auto;padding:0 22px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:26px 0;font-size:14px}
+nav b{font-weight:800;font-size:17px}nav div{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--acc)}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.02em}
+h1{font-weight:800;font-size:clamp(46px,11vw,104px);margin-top:36px}
+.top{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-top:36px}
+.top h1{margin-top:0}
+.me{margin:0;width:clamp(150px,24vw,230px);transform:rotate(3deg);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 10px 4px;box-shadow:0 14px 30px -18px rgba(31,26,21,.45);transition:transform .3s}
+.me:hover{transform:rotate(0)}
+.me img{display:block;width:100%;height:auto;border-radius:8px;background:var(--line)}
+.me figcaption{font:700 21px/1.4 "Caveat",cursive;color:var(--cof);text-align:center}
+.me .ph{display:none;aspect-ratio:1417/2109;border:2px dashed var(--line);border-radius:8px;place-items:center;text-align:center;padding:12px;font-size:13px;color:var(--mut)}
+.me.empty img{display:none}.me.empty .ph{display:grid}
+@media(max-width:640px){.top{grid-template-columns:1fr;gap:18px}.me{width:170px;order:-1}}
+@media(prefers-reduced-motion:reduce){.me,.me:hover{transform:none}}
+
+h1 em{font-style:normal;color:var(--acc)}
+.note{font:700 26px/1.1 "Caveat",cursive;color:var(--cof)}
+.lead{font-size:20px;max-width:620px;margin:22px 0 0;color:var(--mut)}
+.orbit{width:100%;max-width:560px;height:90px;margin:26px 0 0;display:block}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.chips span{border:1px solid var(--fg);border-radius:999px;padding:2px 14px;font-size:14px}
+h2{font-weight:800;font-size:clamp(30px,6vw,46px);margin:96px 0 8px}
+.sub{color:var(--mut);margin:0 0 28px;max-width:620px}
+.laws{display:grid;gap:14px}
+.law{display:grid;grid-template-columns:70px 1fr;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.law .n{font:700 44px/1 "Caveat",cursive;color:var(--acc)}
+.law h3{font-size:22px;margin-bottom:6px}.law p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 20px}
+.card.now{border:2px solid var(--acc)}
+.tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--acc)}
+.card h3{font-size:30px;margin:6px 0 16px}
+.q{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:12px 0;border-top:1px dashed var(--line)}
+.q>b{font:700 21px/1.2 "Caveat",cursive;color:var(--cof)}
+.q p,.q ul{margin:0 0 8px}.q ul{padding-left:18px}
+.nums{display:flex;gap:8px;flex-wrap:wrap}.nums span{border:1px solid var(--line);border-radius:10px;padding:3px 12px;font-size:14px}
+.nums .k{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.lab{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.lab div{border-left:3px solid var(--acc);padding:2px 0 2px 14px}
+.lab b{display:block;font:700 22px "Caveat",cursive;color:var(--cof)}
+.todo{background:var(--hl);padding:0 5px;border-radius:4px;font-size:.9em}
+a{color:var(--acc)}
+.links{display:flex;gap:12px;flex-wrap:wrap}.links a{border:1px solid var(--fg);color:var(--fg);padding:7px 18px;border-radius:999px;text-decoration:none;font-size:15px}.links a:hover{background:var(--fg);color:var(--bg)}
+footer{margin:90px 0 60px;color:var(--mut);font-size:14px}
+@media(max-width:640px){.q{grid-template-columns:1fr;gap:2px}.law{grid-template-columns:50px 1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* gallery */
+.gf{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+.gf button{font:600 14px "Bricolage Grotesque",sans-serif;border:1px solid var(--fg);background:none;color:var(--fg);border-radius:999px;padding:5px 16px;cursor:pointer;transition:background .2s,color .2s}
+.gf button[aria-pressed="true"],.gf button:hover{background:var(--fg);color:var(--bg)}
+.gal{columns:3 230px;column-gap:20px}
+.gi{break-inside:avoid;margin:0 0 22px;display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 10px 14px;box-shadow:0 14px 30px -20px rgba(31,26,21,.5);transform:rotate(var(--r,0deg));transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .35s;opacity:0;translate:0 24px}
+.gi.in{opacity:1;translate:0 0;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .6s,translate .6s}
+.gi:hover,.gi:focus-visible{transform:rotate(0) scale(1.02);box-shadow:0 24px 40px -22px rgba(31,26,21,.6);outline:none}
+.gi:focus-visible{border-color:var(--acc)}
+.gi.hide{display:none}
+.gi.sm{width:66%;margin-left:auto;margin-right:auto;padding:7px 7px 10px;border-radius:12px}
+.gi.sm h3{font-size:21px}.gi.sm p{font-size:12.5px;line-height:1.45}.gi.sm .tg{font-size:10px;margin:9px 3px 1px}
+.gm{position:relative;border-radius:10px;overflow:hidden;background:var(--line)}
+.gm img,.gm video{display:block;width:100%;height:auto;transition:transform .6s}
+.gi:hover .gm img,.gi:hover .gm video{transform:scale(1.05)}
+.gm .pl{position:absolute;right:10px;bottom:10px;width:40px;height:40px;border-radius:50%;background:var(--acc);display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.5)}
+.gm .pl::after{content:"";border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.gm .ty{position:absolute;left:10px;top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:rgba(0,0,0,.55);color:#fff;padding:2px 9px;border-radius:999px}
+.gi .ph{display:none;aspect-ratio:var(--ar,4/5);border:2px dashed var(--mut);border-radius:10px;place-items:center;text-align:center;padding:14px;font-size:13px;color:var(--mut);background:repeating-linear-gradient(-45deg,transparent 0 10px,rgba(127,107,93,.08) 10px 20px)}
+.gi.empty{display:none!important}
+.gi .tg{display:block;margin:12px 4px 2px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--acc)}
+.gi h3{font:700 27px/1.05 "Caveat",cursive;color:var(--cof);margin:0 4px 4px;letter-spacing:0}
+.gi p{margin:0 4px;font-size:14px;line-height:1.5;color:var(--mut)}
+.lb{border:0;padding:0;background:transparent;max-width:min(960px,94vw);width:100%;color:var(--fg)}
+.lb::backdrop{background:rgba(15,11,8,.88);backdrop-filter:blur(6px)}
+.lb[open]{animation:lbIn .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes lbIn{from{opacity:0;transform:scale(.94)}}
+.lbm{background:#000;border-radius:14px;overflow:hidden;display:grid;place-items:center}
+.lbm img,.lbm video{display:block;max-width:100%;max-height:72vh;width:auto;height:auto}
+.lbc{background:var(--card);border-radius:14px;margin-top:10px;padding:16px 20px}
+.lbc h3{font:700 32px/1.05 "Caveat",cursive;color:var(--cof);letter-spacing:0;margin:2px 0 4px}
+.lbc p{margin:0;color:var(--mut)}
+.lbx{position:fixed;width:46px;height:46px;border-radius:50%;border:0;background:var(--card);color:var(--fg);font:700 22px/1 sans-serif;cursor:pointer;display:grid;place-items:center;box-shadow:0 6px 18px -6px rgba(0,0,0,.5)}
+.lbx:hover{background:var(--acc);color:#fff}
+.lbx.c{top:16px;right:16px}.lbx.p{left:16px;top:50%;translate:0 -50%}.lbx.n{right:16px;top:50%;translate:0 -50%}
+@media(max-width:640px){.lbx.p,.lbx.n{top:auto;bottom:16px;translate:none}}
+@media(prefers-reduced-motion:reduce){.gi,.gi.in{transform:none!important;translate:none;opacity:1;transition:none}.gi:hover .gm img,.gi:hover .gm video{transform:none}.lb[open]{animation:none}}
+</style>
+</head>
+<body>
+<div class="mo" id="mo"></div>
+<div class="w">
+<nav><b>Anwesha Gawali</b><div><a href="#laws">My three laws</a><a href="#work">Experiments</a><a href="#notes">Lab notes</a><a href="#beyond">Beyond work</a><a href="#gallery">Gallery</a><a href="#find">Find me</a></div></nav>
+
+<header>
+<div class="top">
+<div><div class="note">newton’s first law, my version:</div>
+<h1>Always<br><em>in motion.</em></h1></div>
+<figure class="me"><img src="/images/me.jpg" alt="Anwesha Gawali" width="1417" height="2109" onerror="this.parentNode.classList.add('empty')"><div class="ph">Add your photo as<br><b>images/me.jpg</b></div><figcaption>that’s me!</figcaption></figure>
+</div>
+<svg class="orbit" viewBox="0 0 560 90" aria-hidden="true"><path id="p" d="M5 70 C70 70 80 15 150 15 S230 75 300 60 S400 10 470 30 S540 20 555 12" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/><circle r="8" fill="#e8541e"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#p"/></animateMotion></circle></svg>
+<p class="lead">When I was young, I wanted to be recognised. That pushed me to build my communication skills, and I made YouTube my stage for trials and errors.</p>
+<div class="chips"><span>Builder</span><span>Creator</span><span>Student</span><span>Founder</span><span>17 years old</span><span>Pune, India</span><span>Cold coffee addict</span></div>
+</header>
+
+<h2 id="laws">My three laws</h2>
+<p class="sub">I’m into physics and maths, and it turns out my life follows the same rules.</p>
+<div class="laws">
+<div class="law"><div class="n">1</div><div><h3>Inertia: I stay where I am until I apply a force</h3><p>I’ve been lazy and stuck. I over-planned instead of doing, polished videos instead of posting, and once closed a door myself, right before walking through it. Staying put never fixed it. A new force in a new direction did.</p></div></div>
+<div class="law"><div class="n">2</div><div><h3>Force: challenge myself, daily</h3><p>It started in Grade 8 with a month without my phone. My dad left it in my room in front of me and I never lifted it. It was the first time I controlled a craving, and I’ve challenged myself every day since. Taking it up is the hard part.</p></div></div>
+<div class="law"><div class="n">3</div><div><h3>Reaction: every no pushes back, and teaches</h3><p>Rejections, a stammer on stage, three programs that said no. Each one pushed back and sent me off in a better direction. Starting new motion while keeping the old motion going is how my life connects.</p></div></div>
+</div>
+
+<h2 id="work">Experiments</h2>
+<p class="sub">Every project below answers the same four questions.</p>
+
+<div class="card now">
+<span class="tag">Now · Founder</span>
+<h3>Precise</h3>
+<div class="q"><b>What I’m doing</b><p>Building a single-dose skincare brand with my cofounder Daanish, whom I met at a founder program: sealed capsules, no water. I handle sales and growth strategy.</p></div>
+<div class="q"><b>What’s hard</b><p>Getting sales as a young person who isn’t pursuing medical studies. It’s hard for people to believe in you.</p></div>
+<div class="q"><b>What I’ve learned</b><p>To keep going even when others doubt me. Know your product and trust it, and others will trust it too. If I’m not confident yet, I fake it till I make it. I was sceptical about this at first, because people can have allergies and skin reactions, but you have to have faith in your product.</p></div>
+</div>
+
+<div class="card">
+<span class="tag">May 2026 · Grade 12 · Mesa FFP</span>
+<h3>Dusk, a perfume brand</h3>
+<div class="q"><b>What I did</b><div><p>I flew to Bangalore alone, knew no one, and two weeks later was selling perfume in a panda costume. With three teammates I built Dusk from scratch and owned decisions on pricing, marketing and shipping. We started as Mesa’s first batch, so honestly as guinea pigs, then found our idea: premium-inspired perfume at a lower cost, with our own twist on the scents, so an average man can try before buying an expensive original.</p><ul><li>Built the website on Lovable; designed the logo, colours and brand in Canva</li><li>Made AI-generated ads and product images</li><li>B2B calls, the catalogue and offline sales</li><li>Filmed the whole journey, even when I was the only one recording</li></ul></div></div>
+<div class="q"><b>What went wrong</b><p>On Mega Flea Day our products and stickers hadn’t arrived, and we faced 29 other stalls, some also selling perfume. A mentor suggested opening our website on laptops so people could try samples and order directly. I borrowed a panda suit from a neighbouring stall to pull customers in, and my dry ice idea worked too.</p></div>
+<div class="q"><b>What I learned</b><p>People buy proof, not promises. Plans collapse, so adapt. Fall in love with the problem, not the idea. Rejections are the first step to yes.</p></div>
+<div class="q"><b>Results</b><div class="nums"><span class="k">₹45,621 revenue</span><span class="k">81 customers across India</span><span>15+ buyers on flea day</span><span>Pitched at Demo Day to real investors</span></div><p style="margin-top:10px"><a href="https://ffp.mesaschool.me/cohort-1/anwesha-gawali">My Mesa FFP page</a></p></div>
+</div>
+
+<div class="card">
+<span class="tag">Grades 9–10 · RISE</span>
+<h3>The Silent Gamble</h3>
+<div class="q"><b>What I did</b><p>Applied to RISE and changed my project into a community about how small decisions, like how early you wake up or whether you procrastinate, shape a whole life. I wrote, filmed and edited everything, researched and set up interviews with handpicked peers, and got help from a TEDx speaker, past finalists and global winners. When I met RISE selection director Muloongo, she noticed my curiosity and let me host her AMA with two teammates, on Zoom, with 15 people attending live and a Discord community of 60.</p></div>
+<div class="q"><b>What went wrong</b><p>Before this, I’d scripted a speech tour, got three top Pune schools to agree, then backed out of the first out of fear. How do I teach students confidence if I’m scared myself? The biggest mistake of my life. I wasn’t selected, and I know I hadn’t given 100%. Later, interviews were hard to arrange and people bailed last minute.</p></div>
+<div class="q"><b>What I learned</b><p>Things happen: you can get embarrassed, stumble or be roasted, and you only get past it by standing in it. I learned to love experimenting and failing, plus patience and empathy when I couldn’t follow someone’s English. I now go on treks to talk with younger kids, and I’m learning Marathi. I’m redesigning the channel around what’s sustainable.</p></div>
+<div class="q"><b>Results</b><div class="nums"><span class="k">60 on Discord</span><span class="k">83 on YouTube</span><span>AMA with 15 live attendees</span><span>Not selected for RISE</span></div><p style="margin-top:10px"><a href="https://youtube.com/@mylifeasilentgamble">My Life as a Silent Gamble on YouTube</a></p></div>
+</div>
+
+<div class="card">
+<span class="tag">Grades 9–10 · Leadership</span>
+<h3>Student Leadership Conference</h3>
+<div class="q"><b>What I did</b><p>In Grade 9 only student council members were meant to go. When teachers couldn’t help and the deadline neared, I went straight to the principal, who called the host in front of me and made a seat. I created that opportunity myself. In Grade 10 I was invited back to speak in front of around 300 people.</p></div>
+<div class="q"><b>What went wrong</b><p>I had a skit script and a song made for my channel. Then I met the other speaker, who wasn’t using a skit, and went spontaneous. I stammered, missed my cue for the song, and everything I’d prepared fell apart. I stayed on stage anyway.</p></div>
+<div class="q"><b>What I learned</b><p>Do what you do, and don’t copy others. Take the risk: you create your own luck.</p></div>
+<div class="q"><b>Results</b><div class="nums"><span class="k">5th in top 5 videos</span><span>100 students, 10+ schools</span><span>Speaker at SLC, Grade 10</span><span>Invited back to speak to later batches</span></div></div>
+</div>
+
+<div class="card">
+<span class="tag">Since I was small · Business</span>
+<h3>Selling things</h3>
+<div class="q"><b>What I did</b><p>Sold things I made at home to friends, who paid with pocket money. Then I pitched strangers in other apartment complexes. During the pandemic I opened a printing press in my complex, with my dad’s guidance and safety taken care of, because nothing was nearby. Later I painted and sold my own art, asking interior designers and artists how to sell.</p></div>
+<div class="q"><b>What went wrong</b><p>I was nervous and awkward, and I got a lot of no’s. At first a no felt terrible.</p></div>
+<div class="q"><b>What I learned</b><p>I’m not afraid of rejection any more. A no lets me move on and a yes pays, but a “maybe” eats my time. So I learned to get to a clear yes, no or not now.</p></div>
+</div>
+
+<div class="card">
+<span class="tag">Grades 8–12 · Personal challenge</span>
+<h3>Phone-free, then a year without social media</h3>
+<div class="q"><b>What I did</b><p>After the one-month phone challenge, I took a year without social media. Once I got my phone back I switched my icons to black and white, set a time at night to post and talk to friends, and added app blockers.</p></div>
+<div class="q"><b>What went wrong</b><p>I was anxious, angry and sad, compared myself to peers on LinkedIn, and had FOMO. Then I started escaping life: swimming for hours, reading, sleeping, isolating myself.</p></div>
+<div class="q"><b>What I learned</b><p>Waking early, showing up for friends and starting imperfectly helped. Doing was the only thing that ever got anything done. I’m writing a book about it.</p></div>
+</div>
+
+<h2 id="notes">Lab notes</h2>
+<p class="sub">Rules I learned by doing, some from watching others get burned.</p>
+<div class="lab">
+<div><b>Money</b>Revenue is not profit. Get paid before you ship. I learned that last one watching a friend get scammed.</div>
+<div><b>Sales</b>Listen first, then solve the other person’s problem. Be clear what you’re building, because if you’re confused, so is your customer.</div>
+<div><b>Leadership</b>It’s listening and clarity, not control. Teams need shared goals. Strategy is deciding what not to do.</div>
+<div><b>Perfection</b>It’s a myth. I used to over-edit videos and lost consistency. Now I start simple and upgrade as I go.</div>
+</div>
+
+<h2 id="beyond">Beyond work</h2>
+<p>I chase the fear of doing something my body has never done: stepping onto ice or a dance routine I learned four days ago. Swimming (zonal level), football and athletics came first, because a stopwatch doesn’t soften the truth. Then skating, three dance styles and drama. I paint and love physics and maths.</p>
+<p>I also love photography. On a solo trip I wanted to ride and play in the snow, with no one to help me film on my camera, and I couldn’t decide whether to capture the moment or just feel it. Since then I document the places, the lessons and the people.</p>
+
+<h2 id="gallery">Gallery</h2>
+<p class="sub">The places, the lessons and the people, caught on camera. Tap anything to see it big.</p>
+<div class="gf" role="group" aria-label="Filter gallery"><button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="photo" aria-pressed="false">Photos</button><button type="button" data-f="video" aria-pressed="false">Videos</button></div>
+<div class="gal" id="gal"></div>
+<dialog class="lb" id="lb" aria-label="Gallery viewer"><div class="lbm" id="lbm"></div><div class="lbc"><span class="tag" id="lbt"></span><h3 id="lbh"></h3><p id="lbd"></p></div><button class="lbx c" type="button" data-a="x" aria-label="Close">&times;</button><button class="lbx p" type="button" data-a="-1" aria-label="Previous">&#8249;</button><button class="lbx n" type="button" data-a="1" aria-label="Next">&#8250;</button></dialog>
+
+<h2>Working on</h2>
+<p>Being less delulu. Balancing studies with building. Knowing when to ask for help. Not changing who I am to fit what others think. Building skills that are actually valuable.</p>
+
+<h2 id="find">Find me</h2>
+<div class="links"><a href="https://ffp.mesaschool.me/cohort-1/anwesha-gawali">Mesa FFP</a><a href="https://www.youtube.com/@GoodToGr8">YouTube: Good To Gr8</a><a href="https://youtube.com/@mylifeasilentgamble">YouTube: Silent Gamble</a><a href="https://www.linkedin.com/in/anwesha-gawali-171265324">LinkedIn</a><a href="mailto:anwesha.v.gawali@gmail.com">Email</a></div>
+
+<footer>Where I’m headed: a billion-dollar company, a community, and a nonprofit that gives back, and building my identity on socials.</footer>
+</div>
+<script>
+(function(){var m=document.getElementById("mo");function u(){var d=document.documentElement,h=d.scrollHeight-d.clientHeight;m.style.width=(h>0?d.scrollTop/h*100:0)+"%"}window.addEventListener("scroll",u,{passive:true});u()})();
+</script>
+<script src="/gallery.js"></script>
+<script>
+(function(){
+var items=window.GALLERY||[],g=document.getElementById("gal"),lb=document.getElementById("lb"),lbm=document.getElementById("lbm"),cur=0,rots=[-2.2,1.6,-1,2.4,-1.8,1.1];
+function el(t,c){var e=document.createElement(t);if(c)e.className=c;return e}
+function file(s){return s.split("#")[0].split("/").slice(-1)[0]}
+var ars=["4/5","3/4","1/1","4/5","9/16","3/4"];
+items.forEach(function(it,i){
+  var b=el("button","gi"+(it.size==="small"?" sm":""));b.type="button";b.dataset.t=it.type;b.style.setProperty("--r",rots[i%rots.length]+"deg");b.style.setProperty("--ar",ars[i%ars.length]);
+  b.setAttribute("aria-label","Open "+(it.type==="video"?"video":"photo")+": "+it.title);
+  var m=el("div","gm"),media;
+  if(it.type==="video"){
+    media=el("video");media.muted=true;media.loop=true;media.playsInline=true;media.preload="metadata";if(it.poster)media.poster=it.poster;media.src=it.src;
+    media.addEventListener("error",function(){b.classList.add("empty")});
+    b.addEventListener("mouseenter",function(){media.play().catch(function(){})});
+    b.addEventListener("mouseleave",function(){media.pause()});
+    m.appendChild(media);m.appendChild(el("span","pl"));var ty=el("span","ty");ty.textContent="Video";m.appendChild(ty);
+  }else{
+    media=el("img");media.loading="lazy";media.alt=it.title;media.src=it.src;media.onerror=function(){b.classList.add("empty")};m.appendChild(media);
+  }
+  var ph=el("div","ph");ph.innerHTML=(it.type==="video"?"&#9654; Video":"&#9635; Photo")+" coming soon<br>add <b></b>";ph.querySelector("b").textContent="images/gallery/"+file(it.src);
+  var tg=el("span","tg");tg.textContent=it.tag||"";var h=el("h3");h.textContent=it.title;var p=el("p");p.textContent=it.desc||"";
+  b.append(m,ph,tg,h,p);b.addEventListener("click",function(){open(i)});g.appendChild(b);
+});
+var cards=[].slice.call(g.children);
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -40px"});cards.forEach(function(c){io.observe(c)})}else cards.forEach(function(c){c.classList.add("in")});
+document.querySelectorAll(".gf button").forEach(function(btn){btn.addEventListener("click",function(){
+  var f=btn.dataset.f;document.querySelectorAll(".gf button").forEach(function(x){x.setAttribute("aria-pressed",x===btn)});
+  cards.forEach(function(c){c.classList.toggle("hide",f!=="all"&&c.dataset.t!==f)});
+})});
+function visible(){return cards.map(function(c,i){return i}).filter(function(i){return !cards[i].classList.contains("hide")&&!cards[i].classList.contains("empty")})}
+function render(){
+  var it=items[cur],c=cards[cur];lbm.innerHTML="";
+  if(c.classList.contains("empty")){var d=el("div","ph");d.style.cssText="display:grid;width:100%;min-height:40vh;color:#ccc;border-color:#555";d.innerHTML=c.querySelector(".ph").innerHTML;lbm.appendChild(d)}
+  else if(it.type==="video"){var v=el("video");v.controls=true;v.autoplay=true;v.playsInline=true;if(it.poster)v.poster=it.poster;v.src=it.src;lbm.appendChild(v)}
+  else{var im=el("img");im.src=it.src;im.alt=it.title;lbm.appendChild(im)}
+  document.getElementById("lbt").textContent=it.tag||"";document.getElementById("lbh").textContent=it.title;document.getElementById("lbd").textContent=it.desc||"";
+}
+function open(i){cur=i;render();if(!lb.open)lb.showModal()}
+function step(d){var v=visible(),k=v.indexOf(cur);if(k<0)k=0;cur=v[(k+d+v.length)%v.length];render()}
+lb.addEventListener("click",function(e){var a=e.target.closest("[data-a]");if(a){a.dataset.a==="x"?lb.close():step(+a.dataset.a)}else if(e.target===lb)lb.close()});
+lb.addEventListener("keydown",function(e){if(e.key==="ArrowRight")step(1);if(e.key==="ArrowLeft")step(-1)});
+lb.addEventListener("close",function(){lbm.innerHTML=""});
+})();
+</script>
+</body>
+</html>
